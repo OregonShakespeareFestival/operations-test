@@ -73,5 +73,6 @@ with con:
                 f.write("INSERTED row with idnum = " + str(row[0]) + " to employees\n")
                 f.flush()
 
-
+    cur.execute("DROP TABLE IF EXISTS temp;") #Drop temp table
+    con.commit() #Commit any transactions to database
 
