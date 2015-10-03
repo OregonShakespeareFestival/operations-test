@@ -14,3 +14,6 @@ f = open("logs.txt", 'w')
 
 #Use database connection to iterate.
 with con:
+    cur = con.cursor()
+    cur.execute("DROP TABLE IF EXISTS temp;")
+    cur.execute("CREATE TABLE temp (idnum INTEGER, givenName, sn, username, mail);")
