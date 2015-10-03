@@ -17,3 +17,5 @@ with con:
     cur = con.cursor()
     cur.execute("DROP TABLE IF EXISTS temp;")
     cur.execute("CREATE TABLE temp (idnum INTEGER, givenName, sn, username, mail);")
+    cur.execute("CREATE INDEX s_index on temp (idnum);")
+    cur.execute("CREATE INDEX IF NOT EXISTS e_index on employees (idnum);")
