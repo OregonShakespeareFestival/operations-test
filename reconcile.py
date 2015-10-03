@@ -49,3 +49,29 @@ with con:
 
     con.commit() #Commits transactions to database
 
+    #Return all records from temp database
+    cur.execute("SELECT * FROM temp")
+    rows = cur.fetchall()
+
+    #Inserting new records
+    count = 0
+    for row in rows:
+        count += 1
+        error = False
+        for i in range(5):
+            if not row[i] and row[i] != 0: #Checks to see if range is not empty
+                f.write("Malformed row at line " + str(count) + " in input.csv\n")
+                print "Malformed row at line " + str(count) + " in input.csv"
+                error = True
+                break
+        if not error: #If not malformed contine
+            cur.execute("SELECT * FROM employees WHERE idnum = " + str(row[0]) + ";") #attempt match on exisitng employee
+            try:
+                cur.fetchall()[0]
+            except:
+                cur.execute("INSERT INTO employees VALUES (?, ?, ?, ?, ?);", row) #Consider entry new insert record
+                f.write("INSERTED row with idnum = " + str(row[0]) + " to employees\n")
+                f.flush()
+
+
+
