@@ -26,8 +26,26 @@ with con:
 
     with open('input.csv','rb') as fin:
         dr = csv.DictReader(fin, fieldnames=("idnum", "givenName", "sn", "username", "mail")) # comma is default delimiter
-        to_db = [(i["idnum"], i["givenName"], i["sn"], i["username"], i["mail"]) for i in dr] #create array to send to database
+        to_db = [(i["idnum"], i["givenName"], i["sn"], i["username"], i["mail"]) for i in dr] #create assoc-array to send to database
 
     #Insert the records to the temp table from the CSV
     cur.executemany("INSERT INTO temp (idnum, givenName, sn, username, mail) VALUES (?, ?, ?, ?, ?);", to_db)
-    con.commit() #Clost transacation
+    con.commit() #Close transacation
+
+    #Return all employee records from SQLite to cur obj.
+    cur.execute("SELECT * FROM employees")
+
+    #Create rows object to iterate over.
+    rows = cur.fetchall() #Return all records from the employee table
+
+    for row in rows:
+        cur.execute("SELECT * FROM temp WHERE idnum = " + str(row[0]) + ";") #Comparing idnum to string, returning mathing row
+        try:
+            cur.fetchall()[0] # Try to return pk
+        except:
+            cur.execute("DELETE from employees WHERE idnum = " + str(row[0]) + ";") #If no match, generate exception drop record
+            f.write("DELETED row with idnum = " + str(row[0]) + " from employees\n") #Log deletion
+            f.flush() #Save and Close file
+
+    con.commit() #Commits transactions to database
+
