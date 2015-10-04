@@ -2,12 +2,12 @@
 
 # -*- coding: utf-8 -*-
 
-import sqlite3
+import sqlite3 as lite
 import csv
 
 
 #Create database connection.
-dbConnect = sqlite3.connect('employees.db')
+dbConnect = lite.connect('employees.db')
 
 #Create file handle for logging and open.
 logFile = open("logs.txt", 'w')
