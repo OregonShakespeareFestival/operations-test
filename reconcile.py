@@ -2,12 +2,12 @@
 
 # -*- coding: utf-8 -*-
 
-import sqlite3 as lite
+import sqlite3
 import csv
 
 
 #Create database connection.
-dbConnect = lite.connect('employees.db')
+dbConnect = sqlite3.connect('employees.db')
 
 #Create file handle for logging and open.
 logFile = open("logs.txt", 'w')
@@ -75,4 +75,3 @@ with dbConnect:
 
     cursor.execute("DROP TABLE IF EXISTS temp;") #Drop temporary table.
     dbConnect.commit() #Commit any transactions to database.
-
