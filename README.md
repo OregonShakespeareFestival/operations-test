@@ -8,28 +8,28 @@ October 4, 2015
 
 **Excercise: ** [https://github.com/OregonShakespeareFestival/operations-test](https://github.com/OregonShakespeareFestival/operations-test)
 
-![image alt text](image_0.png)
+![image alt text](images/image_0.png)
 
 **Initial Analysis:**
 
 1. README.md is a "mark down" file opened with either
 [http://www.sublimetext.com/](http://www.sublimetext.com/) or [https://atom.io/](https://atom.io/)
  The database needs to be reconciled with the input from the ERP.
-![image alt text](image_1.png)
+![image alt text](images/image_1.png)
 
 2. employees.db is a database file opened with [SQLite Browser](https://github.com/sqlitebrowser/sqlitebrowser/releases/download/v3.6.0/sqlitebrowser-3.6.0.dmg) -:
 2.a. **Database Structure: Table 1: employees; Table 2: test**
-![image alt text](image_2.png)
+![image alt text](images/image_2.png)
 
 **2.b. Browse Employee Records**
 
-![image alt text](image_3.png)
+![image alt text](images/image_3.png)
 
-![image alt text](image_4.png)
+![image alt text](images/image_4.png)
 
-![image alt text](image_5.png)
+![image alt text](images/image_5.png)
 
-![image alt text](image_6.png)![image alt text](image_7.png)
+![image alt text](images/image_6.png)![image alt text](images/image_7.png)
 
 
 
@@ -44,21 +44,21 @@ October 4, 2015
 
     4. malformed data: garbage data appended **‘mail’ **
 
-![image alt text](image_8.png)![image alt text](image_9.png)
+![image alt text](images/image_8.png)![image alt text](images/image_9.png)
 
-![image alt text](image_10.png)
+![image alt text](images/image_10.png)
 
-![image alt text](image_11.png)
+![image alt text](images/image_11.png)
 
-![image alt text](image_12.png)
+![image alt text](images/image_12.png)
 
-![image alt text](image_13.png)
+![image alt text](images/image_13.png)
 
-![image alt text](image_14.png)
+![image alt text](images/image_14.png)
 
 **Requirements / Language Choice / Deliverables:**
 
-![image alt text](image_15.png)
+![image alt text](images/image_15.png)
 
 (employee changes) input.csv => (missing records added, some remove) employees.db
 
@@ -88,37 +88,37 @@ The data structure is challenging. Two important things are to sanitize strings 
 
 **Code: **[https://github.com/RobertLuaders/operations-test/blob/master/reconcile.py](https://github.com/RobertLuaders/operations-test/blob/master/reconcile.py)
 
-![image alt text](image_16.png)
+![image alt text](images/image_16.png)
 
-![image alt text](image_17.png)
+![image alt text](images/image_17.png)
 
-![image alt text](image_18.png)
+![image alt text](images/image_18.png)
 
-![image alt text](image_19.png)
+![image alt text](images/image_19.png)
 
-![image alt text](image_20.png)
+![image alt text](images/image_20.png)
 
-![image alt text](image_21.png)
+![image alt text](images/image_21.png)
 
-![image alt text](image_22.png)
+![image alt text](images/image_22.png)
 
-![image alt text](image_23.png)
+![image alt text](images/image_23.png)
 
-![image alt text](image_24.png)
+![image alt text](images/image_24.png)
 
-![image alt text](image_25.png)
+![image alt text](images/image_25.png)
 
-![image alt text](image_26.png)
+![image alt text](images/image_26.png)
 
 **Verified:**
 
-![image alt text](image_27.png)
+![image alt text](images/image_27.png)
 
 **Commit: **
 
-![image alt text](image_28.jpg)**GitHub: **[https://github.com/RobertLuaders/operations-test/commits/master](https://github.com/RobertLuaders/operations-test/commits/master)
+![image alt text](images/image_28.jpg)**GitHub: **[https://github.com/RobertLuaders/operations-test/commits/master](https://github.com/RobertLuaders/operations-test/commits/master)
 
-![image alt text](image_29.png)
+![image alt text](images/image_29.png)
 
 **References:**
 
